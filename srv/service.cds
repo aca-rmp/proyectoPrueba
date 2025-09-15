@@ -1,13 +1,13 @@
 using { Proyectoprueba as db } from '../db/schema';
-
+ 
 service CatalogService {
+    @odata.draft.enabled
+    entity Products as projection on db.Products;
+}
 
-  @odata.draft.enabled
-  entity Products as projection on db.Products{
-        *,
-        action addStock(quantity: Integer) returns Products;
-    };
-
+// Se extiende la PROYECCIÓN para añadirle la ACCIÓN
+extend projection CatalogService.Products with actions {
+    action addStock(quantity : Integer) returns CatalogService.Products
 }
 
 annotate CatalogService.Products with @(
