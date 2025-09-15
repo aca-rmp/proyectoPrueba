@@ -44,6 +44,12 @@ annotate service.Products with @(
             Label : 'stock',
             Value : stock,
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Label : 'Añadir Stock',
+            Action : 'CatalogService.addStock',
+            InvocationGrouping: #Isolated
+        }
     ],
 );
 
