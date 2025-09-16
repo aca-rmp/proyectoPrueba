@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View
+    controllerName="publishersmanagement.controller.NewPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page showNavButton="true" navButtonPress="onNavBack" title="Publishers Management">
+        <headerContent>
+            <Button text="Create Publisher" press="onCreatePublisher"/>
+        </headerContent>
+        <content>
+            <Table id="publishersTable" items="{ path: '/Publishers' }" mode="SingleSelectMaster">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Publishers List"/>
+                        <ToolbarSpacer/>
+                        <Button text="Edit" press="onEditPublisher"/>
+                        <Button text="Delete" press="onDeletePublisher"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Publisher ID"/>
+                    </Column>
+                    <Column>
+                        <Text text="Publisher Name"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{PublisherID}"/>
+                            <Text text="{PublisherName}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

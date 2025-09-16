@@ -1,0 +1,140 @@
+{
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "publishersmanagement",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "Publishers",
+    "description": "App generada con joule",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:feop",
+      "version": "1.18.7",
+      "toolsId": "f9550e2d-0519-4863-a6a4-29e5a5927130"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/service/proyectoPrueba/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.136.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "publishersmanagement.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router"
+      },
+      "routes": [
+        {
+          "pattern": "Publishers({key}):?query:",
+          "name": "PublishersObjectPage",
+          "target": [
+            "PublishersObjectPage"
+          ]
+        },
+        {
+          "pattern": "NewPage",
+          "name": "NewPage",
+          "target": [
+            "NewPage"
+          ]
+        }
+      ],
+      "targets": {
+        "PublishersObjectPage": {
+          "type": "Component",
+          "id": "PublishersObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Publishers",
+              "content": {
+                "header": {
+                  "visible": false,
+                  "anchorBarVisible": false
+                }
+              }
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": "/Publishers({key})"
+        },
+        "NewPage": {
+          "viewName": "publishersmanagement.view.NewPage",
+          "type": "XML",
+          "id": "NewPage",
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": "/NewPage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

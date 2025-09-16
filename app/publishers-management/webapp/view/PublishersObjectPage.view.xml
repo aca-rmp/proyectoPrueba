@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View
+    controllerName="publishersmanagement.controller.PublishersObjectPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page>
+        <content>
+            <Button text="Go to Publishers List" press="onNavToNewPage" />
+        </content>
+    </Page>
+</mvc:View>

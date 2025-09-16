@@ -1,0 +1,1 @@
+using proyectoPruebaSrv as service from '../../srv/service';

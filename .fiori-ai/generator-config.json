@@ -1,0 +1,32 @@
+{
+    "version": "0.2",
+    "floorplan": "FE_FEOP",
+    "project": {
+        "name": "publishers-management",
+        "targetFolder": "/home/user/projects/proyectoPrueba",
+        "title": "Publishers Management",
+        "description": "Manage publisher information efficiently",
+        "ui5Version": "1.136.0",
+        "localUI5Version": "1.82.2",
+        "sapux": true
+    },
+    "service": {
+        "servicePath": "/service/proyectoPrueba/",
+        "capService": {
+            "projectPath": "/home/user/projects/proyectoPrueba",
+            "serviceName": "proyectoPruebaSrv",
+            "serviceCdsPath": "srv/service"
+        }
+    },
+    "entityConfig": {
+        "mainEntity": {
+            "entityName": "Publishers"
+        },
+        "generateFormAnnotations": true
+    },
+    "projectTemplateType": "FORM_ENTRY_OBJECT_PAGE",
+    "telemetryData": {
+        "generationSourceName": "AI Headless",
+        "generationSourceVersion": "1.18.7"
+    }
+}
